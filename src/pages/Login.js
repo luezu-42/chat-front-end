@@ -16,12 +16,12 @@ function Login(props) {
       })
       .then((response) => {
         localStorage.setItem("CC_Token", response.data.token);
-        // alert(response.data);
+        //console.log(response.data);
         props.history.push("/");
         props.setupSocket();
       })
       .catch((err) => {
-        //alert(err.response.data.message);
+        console.log(err);
       });
   };
 
