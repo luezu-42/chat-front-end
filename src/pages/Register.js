@@ -12,19 +12,16 @@ function Register(props) {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
-    axios
-      .post("http://52.67.60.183:3000/user/", {
+    try {
+     await axios.post("http://52.67.60.183:3000/user/", {
         name,
         email,
         password,
-      })
-      .then((response) => {
-        props.history.push("/login");
-        //alert(response.data.message);
-      })
-      .catch((response) => {
-        //alert(err.response.data.message);
       });
+      props.history.push("/login");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

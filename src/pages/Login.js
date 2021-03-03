@@ -11,7 +11,7 @@ function Login(props) {
     const password = passwordRef.current.value;
 
     axios
-      .post("http://52.67.60.183:3000/user/auth/", {
+      .post("http://52.67.60.183:3000/user/auth", {
         email,
         password,
       })

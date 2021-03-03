@@ -28,7 +28,7 @@ function Group(props) {
       const response = await axios.post("http://52.67.60.183:3000/", {
         name,
       });
-      setGroup([name]);
+      setGroup([response]);
     } catch (err) {
       console.log(err);
     }

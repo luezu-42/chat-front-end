@@ -1,6 +1,5 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
-import io from "socket.io-client";
 import axios from "axios";
 
 function Chat({ match, socket }) {
