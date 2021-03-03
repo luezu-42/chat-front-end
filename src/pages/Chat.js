@@ -12,7 +12,7 @@ function Chat({ match, socket }) {
 
   const RoomName = async () => {
     try {
-      const response = await axios.get(`http://52.67.60.183:3000/${chatroomId}`);
+      const response = await axios.get(`http://localhost:3333/${chatroomId}`);
       setName(response.data.name)
     } catch (err) {
       console.log(err);

@@ -6,9 +6,8 @@ function Group(props) {
   const [group, setGroup] = React.useState([]);
   const groupRef = React.createRef();
 
-  const getGroups = () => {
-    axios
-      .get("http://52.67.60.183:3000/", {
+  const getGroups = async () => {
+    axios.get("http://localhost:3333/", {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("CC_Token"),
         },
@@ -25,7 +24,7 @@ function Group(props) {
     const name = groupRef.current.value;
 
     try {
-      const response = await axios.post("http://52.67.60.183:3000/", {
+      const response = await axios.post("http://localhost:3333/", {
         name,
       });
       setGroup([response]);

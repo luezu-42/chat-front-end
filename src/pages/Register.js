@@ -11,9 +11,9 @@ function Register(props) {
     const name = nameRef.current.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-
+    console.group(name)
     try {
-     await axios.post("http://52.67.60.183:3000/user/", {
+     await axios.post("http://localhost:3333/user", {
         name,
         email,
         password,

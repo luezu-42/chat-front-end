@@ -10,10 +10,10 @@ import io from "socket.io-client";
 function App() {
   const [socket, setSocket] = React.useState(null);
 
-  const setupSocket = () => {
+  const setupSocket = async () => {
     const token = localStorage.getItem("CC_Token");
     if (token && !socket) {
-      const newSocket = io("http://52.67.60.183:3000/", {
+      const newSocket = await io("http://localhost:3333/", {
         query: {
           token: localStorage.getItem("CC_Token"),
         },

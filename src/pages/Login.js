@@ -6,12 +6,11 @@ function Login(props) {
   const emailRef = React.createRef();
   const passwordRef = React.createRef();
 
-  const loginUser = () => {
+  const loginUser = async () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
-    axios
-      .post("http://52.67.60.183:3000/user/auth", {
+    await axios.post("http://localhost:3333/user/auth/", {
         email,
         password,
       })
@@ -22,7 +21,7 @@ function Login(props) {
         props.setupSocket();
       })
       .catch((err) => {
-        alert(err.response.data.message);
+        //alert(err.response.data.message);
       });
   };
 
