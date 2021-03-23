@@ -10,19 +10,18 @@ function Login(props) {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
-    await axios.post("http://localhost:3333/user/auth/", {
+    try {
+      const response = await axios.post("http://localhost:3333/user/auth/", {
         email,
         password,
-      })
-      .then((response) => {
-        localStorage.setItem("CC_Token", response.data.token);
-        //console.log(response.data);
-        props.history.push("/");
-        props.setupSocket();
-      })
-      .catch((err) => {
-        console.log(err);
       });
+      localStorage.setItem("x-access-token", response.data.token);
+      //console.log(response.data);
+      props.history.push("/");
+      props.setupSocket();
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   return (

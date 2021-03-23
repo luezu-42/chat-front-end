@@ -11,11 +11,11 @@ function App() {
   const [socket, setSocket] = React.useState(null);
 
   const setupSocket = async () => {
-    const token = localStorage.getItem("CC_Token");
+    const token = localStorage.getItem("x-access-token");
     if (token && !socket) {
       const newSocket = await io("http://localhost:3333/", {
         query: {
-          token: localStorage.getItem("CC_Token"),
+          token: localStorage.getItem("x-access-token"),
         },
       });
 

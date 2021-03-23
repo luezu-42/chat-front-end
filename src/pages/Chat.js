@@ -27,7 +27,7 @@ function Chat({ match, socket }) {
       });
       messageRef.current.value = "";
     }
-    const token = localStorage.getItem("CC_Token");
+    const token = localStorage.getItem("x-access-token");
     if (token) {
       const payload = JSON.parse(atob(token.split(".")[1]));
       setUserId(payload.id);
@@ -41,7 +41,7 @@ function Chat({ match, socket }) {
   };
 
   React.useEffect(() => {
-    const token = localStorage.getItem("CC_Token");
+    const token = localStorage.getItem("x-access-token");
     if (token) {
       const payload = JSON.parse(atob(token.split(".")[1]));
       setUserId(payload.id);

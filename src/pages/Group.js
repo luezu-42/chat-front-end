@@ -7,17 +7,16 @@ function Group(props) {
   const groupRef = React.createRef();
 
   const getGroups = async () => {
-    axios.get("http://localhost:3333/", {
+    try {
+      const response = await axios.get("http://localhost:3333/", {
         headers: {
-          Authorization: "Bearer " + localStorage.getItem("CC_Token"),
+          Authorization: "Bearer " + localStorage.getItem("x-access-token"),
         },
-      })
-      .then((response) => {
-        setGroup(response.data);
-      })
-      .catch((err) => {
-        // setTimeout(getGroups, 30000)
       });
+      setGroup(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const createGroup = async () => {
@@ -49,9 +48,9 @@ function Group(props) {
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
             name="name"
-        id="name"
-        placeholder="nome do grupo"
-        ref={groupRef}
+            id="name"
+            placeholder="nome do grupo"
+            ref={groupRef}
           />
         </div>
         <div class="flex items-center justify-between">
@@ -65,25 +64,24 @@ function Group(props) {
         </div>
       </div>
 
-<table class="rounded-t-lg m-1 w-5/6 mx-auto bg-white text-gray-800 mb-20">
-  <tr class="text-left border-b-2 border-gray-300">
-    <th class="px-4 py-3">Grupos</th>
-  </tr>
-  {group.map((group) => {
-     return <tr class="bg-gray-100 border-b border-gray-200" key={group._id}>
-    <td class="px-4 py-3">{group.name}</td>
-    <td class="px-1 py-3 bg-green-300 rounded text-center text-white">
-        <Link to={"/chat/" + group._id}>Entrar</Link>
-        </td>
-  </tr> 
-  })}
-  
-
-</table>
+      <table class="rounded-t-lg m-1 w-5/6 mx-auto bg-white text-gray-800 mb-20">
+        <tr class="text-left border-b-2 border-gray-300">
+          <th class="px-4 py-3">Grupos</th>
+        </tr>
+        {group.map((group) => {
+          return (
+            <tr class="bg-gray-100 border-b border-gray-200" key={group._id}>
+              <td class="px-4 py-3">{group.name}</td>
+              <td class="px-1 py-3 bg-green-300 rounded text-center text-white">
+                <Link to={"/chat/" + group._id}>Entrar</Link>
+              </td>
+            </tr>
+          );
+        })}
+      </table>
       {group.map((group) => (
         <div>
           <div></div>
-          
         </div>
       ))}
     </>
