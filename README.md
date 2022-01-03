@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+<h1 align="center">Chat app</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Chat app
 
-## Available Scripts
+Chat app é uma aplicação com foco em troca de mensagens por salas!
 
-In the project directory, you can run:
+### Pré-requisitos
 
-### `yarn start`
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) e [MongoDB](https://www.mongodb.com/try/download/community).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Iniciando projeto
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Iniciando back end!
 
-### `yarn test`
+```bash
+# Clone este repositório
+$ git clone <https://github.com/luezu-42/chat-back-end>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Acesse a pasta do projeto no terminal/cmd
+$ cd chat-back-end
 
-### `yarn build`
+# Instale as dependências
+$ npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Execute a aplicação em modo de desenvolvimento
+$ npm run start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Aguarde o fim da compilação do projeto...
+# O servidor inciará na porta:3333 - <http://localhost:3333/>
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Iniciando front end!
 
-### `yarn eject`
+```bash
+# Clone este repositório
+$ git clone <https://github.com/luezu-42/chat-front-end>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Acesse a pasta do projeto no terminal/cmd
+$ cd chat-front-end
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Instale as dependências com npm ou yarn
+$ npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Execute a aplicação em modo de desenvolvimento. Caso você tenha feito a instalção por yarn escreva apenas 'yarn start'
+$ npm run start
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Aguarde o fim da compilação do projeto...
+# O servidor inciará na porta:3000 - acesse <http://localhost:3000/>
+```
 
-## Learn More
+### Testes(jest)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+# Entre na pasta de back end
+$ cd chat-back-end
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Após a instalação dos pacotes(npm install) feito no "Iniciando back end!" execute
+$ npm run test
 
-### Code Splitting
+# Aguarde a execução do código
+```
+Guia dos testes feitos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1️⃣ - Rotas de acesso funcionando? 🟢 <br>
+2️⃣ - Deve cadastrar um usuário com sucesso 🟢 <br>
+3️⃣ - Impedir que o usuário se cadastre com campos vazios 🟢 <br>
+4️⃣ - Impedir o cadastro de email repetido 🟢 <br>
+5️⃣ - Deve retornar um token quando logar 🟢 <br>
+6️⃣ - Grupo deve ser criado 🟢 <br>
+7️⃣ - Retorno de todos os grupos 🟢
 
-### Analyzing the Bundle Size
+### -------------------------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Este app teve como foco o back, o sistema de envio de mensagens <br>
+Repositório do front end - https://github.com/luezu-42/chat-front-end
 
-### Making a Progressive Web App
+### Tecnologias aprendidas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* Jest
+* JWT
+* Socket.io
+* AWS
+* PM2
+* Tailwind
+* OpenSSl
+* Uso um pouco mais avançado de Mongodb
+* Express com Socket.io
 
-### Advanced Configuration
+### Melhorias
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* Um erro foi ter usado muitas tecnologias novas para mim juntas...
+* UI, os erros de login e registro para o usuário não está claro, estão presentes apenas no console do back end
+* Função de logout (excluir token)
+* Falta de testes(jest) sobre o sokcet.io
+* Uso do Tailwind sem pesquisa antecipada sobre o deploy, pela necessidade de alteração de ambiente do Tailwind, não foi possivel fazer o deploy do front-end do app na Vercel e no Heroku. 
+* Mais testes sobre as autorizações do certificado (openssl)
+* Componentização do app no front
+* Falta de estudo sobre middleware
+* Design system na estrutura de arquivos no front (mesmo que não há muitas pages, se tivessse o minimo de componetização poderia ser aplicado)
 
-### Deployment
+### Outros
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+-Deixei as variaveis de ambiente ".env" no repositório por se tratar de um uso local. <br>
 
-### `yarn build` fails to minify
+-App feito em 4 dias!  <br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-Caso algum participante do challenge venha a mencionar um erro no mongoose, avise-os que a ultima versão do mongoose está mostrando alguns bugs na conectividade, ultilizar versão "mongoose": "^5.11.18" para correção do erro
