@@ -89,7 +89,7 @@ Repositório do front end - https://github.com/luezu-42/chat-front-end
 
 ### Melhorias
 
-* Um erro foi ter usado muitas tecnologias novas para mim juntas...
+* Um erro foi ter usado muitas tecnologias novas para juntas...
 * UI, os erros de login e registro para o usuário não está claro, estão presentes apenas no console do back end
 * Função de logout (excluir token)
 * Falta de testes(jest) sobre o sokcet.io
